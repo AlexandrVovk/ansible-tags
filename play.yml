@@ -1,0 +1,28 @@
+---
+
+- name: Update web servers
+  hosts: localhost
+  connection: local
+  gather_facts: no
+
+  tasks:
+  - name: tag always
+    shell: echo always
+    tags:
+      - always
+
+  - name: tag build
+    shell: echo build
+    tags:
+      - build
+
+  - name: tag deploy
+    shell: echo deploy
+    tags:
+      - deploy
+
+  - name: tag untagged 1
+    shell: echo untagged 1
+
+  - name: tag untagged 2
+    shell: echo untagged 2
